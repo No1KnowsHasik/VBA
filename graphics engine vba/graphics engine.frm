@@ -9,12 +9,21 @@ Begin VB.Form Form1
    ScaleHeight     =   9450
    ScaleWidth      =   17550
    StartUpPosition =   3  'Windows Default
+   Begin VB.PictureBox Picture1 
+      Height          =   6405
+      Left            =   480
+      ScaleHeight     =   6345
+      ScaleWidth      =   8475
+      TabIndex        =   28
+      Top             =   120
+      Width           =   8540
+   End
    Begin VB.HScrollBar HScroll5 
       Height          =   615
       Left            =   8160
       Max             =   600
       Min             =   40
-      TabIndex        =   27
+      TabIndex        =   26
       Top             =   6840
       Value           =   350
       Width           =   2535
@@ -23,14 +32,14 @@ Begin VB.Form Form1
       Caption         =   "Парсим карту"
       Height          =   405
       Left            =   12120
-      TabIndex        =   26
+      TabIndex        =   25
       Top             =   8760
       Width           =   2415
    End
    Begin VB.TextBox Text2 
       Height          =   405
       Left            =   10200
-      TabIndex        =   25
+      TabIndex        =   24
       Text            =   "S:\ABC\MAP1.txt"
       Top             =   8760
       Width           =   1935
@@ -39,16 +48,16 @@ Begin VB.Form Form1
       Height          =   735
       Left            =   1080
       Max             =   180
-      TabIndex        =   20
+      TabIndex        =   19
       Top             =   6960
-      Value           =   30
+      Value           =   32
       Width           =   3135
    End
    Begin VB.HScrollBar HScroll3 
       Height          =   735
       Left            =   1080
       Max             =   180
-      TabIndex        =   19
+      TabIndex        =   18
       Top             =   7800
       Value           =   60
       Width           =   3135
@@ -57,7 +66,7 @@ Begin VB.Form Form1
       Height          =   735
       Left            =   1080
       Max             =   180
-      TabIndex        =   18
+      TabIndex        =   17
       Top             =   8640
       Width           =   3135
    End
@@ -65,7 +74,7 @@ Begin VB.Form Form1
       Caption         =   "Печать"
       Height          =   315
       Left            =   15120
-      TabIndex        =   17
+      TabIndex        =   16
       Top             =   6360
       Visible         =   0   'False
       Width           =   495
@@ -74,7 +83,7 @@ Begin VB.Form Form1
       Caption         =   "down"
       Height          =   615
       Left            =   5040
-      TabIndex        =   16
+      TabIndex        =   15
       Top             =   8520
       Width           =   615
    End
@@ -82,7 +91,7 @@ Begin VB.Form Form1
       Caption         =   "left"
       Height          =   615
       Left            =   4440
-      TabIndex        =   15
+      TabIndex        =   14
       Top             =   7920
       Width           =   615
    End
@@ -90,7 +99,7 @@ Begin VB.Form Form1
       Caption         =   "right"
       Height          =   615
       Left            =   5640
-      TabIndex        =   14
+      TabIndex        =   13
       Top             =   7920
       Width           =   615
    End
@@ -98,7 +107,7 @@ Begin VB.Form Form1
       Caption         =   "up"
       Height          =   615
       Left            =   5040
-      TabIndex        =   13
+      TabIndex        =   12
       Top             =   7320
       Width           =   615
    End
@@ -106,7 +115,7 @@ Begin VB.Form Form1
       Height          =   495
       Left            =   12000
       Max             =   100
-      TabIndex        =   11
+      TabIndex        =   10
       Top             =   5160
       Value           =   70
       Visible         =   0   'False
@@ -116,7 +125,7 @@ Begin VB.Form Form1
       Caption         =   "Form 2"
       Height          =   195
       Left            =   12600
-      TabIndex        =   10
+      TabIndex        =   9
       Top             =   4680
       Visible         =   0   'False
       Width           =   1695
@@ -126,7 +135,7 @@ Begin VB.Form Form1
       Left            =   13440
       MultiLine       =   -1  'True
       ScrollBars      =   2  'Vertical
-      TabIndex        =   9
+      TabIndex        =   8
       Top             =   720
       Visible         =   0   'False
       Width           =   2055
@@ -135,7 +144,7 @@ Begin VB.Form Form1
       Caption         =   "-->"
       Height          =   975
       Left            =   11160
-      TabIndex        =   8
+      TabIndex        =   7
       Top             =   2280
       Visible         =   0   'False
       Width           =   2175
@@ -144,14 +153,14 @@ Begin VB.Form Form1
       Caption         =   "Show"
       Height          =   1455
       Left            =   6840
-      TabIndex        =   7
+      TabIndex        =   6
       Top             =   7680
       Width           =   2535
    End
    Begin VB.TextBox Text5 
       Height          =   405
       Left            =   10200
-      TabIndex        =   5
+      TabIndex        =   4
       Text            =   "S:\ABC\VBA2.txt"
       Top             =   7920
       Width           =   1935
@@ -160,7 +169,7 @@ Begin VB.Form Form1
       Caption         =   "Парсим матрицу"
       Height          =   405
       Left            =   12120
-      TabIndex        =   4
+      TabIndex        =   3
       Top             =   7920
       Width           =   2415
    End
@@ -169,7 +178,7 @@ Begin VB.Form Form1
       Left            =   11160
       MultiLine       =   -1  'True
       ScrollBars      =   2  'Vertical
-      TabIndex        =   3
+      TabIndex        =   2
       Top             =   720
       Visible         =   0   'False
       Width           =   2295
@@ -178,7 +187,7 @@ Begin VB.Form Form1
       Height          =   2055
       Left            =   13320
       MultiLine       =   -1  'True
-      TabIndex        =   2
+      TabIndex        =   1
       Top             =   2280
       Visible         =   0   'False
       Width           =   2175
@@ -187,25 +196,16 @@ Begin VB.Form Form1
       Caption         =   "Заполнить массив"
       Height          =   615
       Left            =   11640
-      TabIndex        =   1
+      TabIndex        =   0
       Top             =   6000
       Visible         =   0   'False
       Width           =   1935
-   End
-   Begin VB.PictureBox Picture1 
-      Height          =   6405
-      Left            =   240
-      ScaleHeight     =   6345
-      ScaleWidth      =   8475
-      TabIndex        =   0
-      Top             =   120
-      Width           =   8540
    End
    Begin VB.Label Label7 
       Caption         =   "Scale"
       Height          =   375
       Left            =   6480
-      TabIndex        =   28
+      TabIndex        =   27
       Top             =   6960
       Width           =   1575
    End
@@ -213,7 +213,7 @@ Begin VB.Form Form1
       Caption         =   "Путь к файлу с картой"
       Height          =   255
       Left            =   10200
-      TabIndex        =   24
+      TabIndex        =   23
       Top             =   8400
       Width           =   4215
    End
@@ -221,7 +221,7 @@ Begin VB.Form Form1
       Caption         =   "Z"
       Height          =   615
       Left            =   480
-      TabIndex        =   23
+      TabIndex        =   22
       Top             =   8640
       Width           =   495
    End
@@ -229,7 +229,7 @@ Begin VB.Form Form1
       Caption         =   "Y"
       Height          =   615
       Left            =   480
-      TabIndex        =   22
+      TabIndex        =   21
       Top             =   7800
       Width           =   495
    End
@@ -237,7 +237,7 @@ Begin VB.Form Form1
       Caption         =   "X"
       Height          =   615
       Left            =   480
-      TabIndex        =   21
+      TabIndex        =   20
       Top             =   6960
       Width           =   495
    End
@@ -245,7 +245,7 @@ Begin VB.Form Form1
       Caption         =   "Подбор угла изометрии"
       Height          =   375
       Left            =   13080
-      TabIndex        =   12
+      TabIndex        =   11
       Top             =   5760
       Visible         =   0   'False
       Width           =   2175
@@ -254,7 +254,7 @@ Begin VB.Form Form1
       Caption         =   "Путь к файлу с матрицами"
       Height          =   255
       Left            =   10200
-      TabIndex        =   6
+      TabIndex        =   5
       Top             =   7560
       Width           =   4215
    End
@@ -270,7 +270,6 @@ Dim X, Y As Double
 Dim scalee As Integer
 Dim path As String
 Dim filenumber As Integer
-
 Dim matr(5, 3) As Double        'исходная матрица
 Dim matrwork(5, 3) As Double    'матрица для изменений
 Dim batr
@@ -287,6 +286,19 @@ For k = 0 To UBound(batr) Step 2
     
     Me.Picture1.Line (matrwork(mn, 0) * Me.HScroll5.Value / 100, matrwork(mn, 1) * Me.HScroll5.Value / 100)-(matrwork(bn, 0) * Me.HScroll5.Value / 100, matrwork(bn, 1) * Me.HScroll5.Value / 100)
 Next
+
+vinos_x = matrwork(2, 0) * Me.HScroll5.Value / 100 + ((matrwork(1, 0) - matrwork(2, 0)) * Me.HScroll5.Value / 100) / 2
+vinos_y = matrwork(2, 1) * Me.HScroll5.Value / 100 + ((matrwork(1, 1) - matrwork(2, 1)) * Me.HScroll5.Value / 100) / 2
+
+Me.Picture1.Line (vinos_x, vinos_y)-(vinos_x - 5, vinos_y - 5)
+Me.Picture1.Line (vinos_x - 5, vinos_y - 5)-(vinos_x - 20, vinos_y - 5)
+Me.Picture1.CurrentX = vinos_x - 20
+Me.Picture1.CurrentY = vinos_y - 7
+Me.Picture1.Print "Сторона октаэдра ="
+
+'Printer.Print Me.Picture1.Image
+'Printer.EndDoc
+
 End Sub
 
 Private Sub Command11_Click() 'парсим мапу
