@@ -18,6 +18,27 @@ Begin VB.Form Form1
    ScaleHeight     =   10050
    ScaleWidth      =   14910
    StartUpPosition =   3  'Windows Default
+   Begin VB.CommandButton Command18 
+      Appearance      =   0  'Flat
+      BackColor       =   &H00C000C0&
+      Caption         =   "PS"
+      BeginProperty Font 
+         Name            =   "MV Boli"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   1215
+      Left            =   1320
+      Picture         =   "okt.frx":41EB42
+      Style           =   1  'Graphical
+      TabIndex        =   23
+      Top             =   8760
+      Width           =   1215
+   End
    Begin VB.CommandButton Command17 
       BackColor       =   &H00FF80FF&
       Caption         =   "SVG"
@@ -93,7 +114,7 @@ Begin VB.Form Form1
       EndProperty
       Height          =   1215
       Left            =   2520
-      Picture         =   "okt.frx":41EB42
+      Picture         =   "okt.frx":421B84
       Style           =   1  'Graphical
       TabIndex        =   18
       Top             =   8760
@@ -128,7 +149,7 @@ Begin VB.Form Form1
       EndProperty
       Height          =   1215
       Left            =   4920
-      Picture         =   "okt.frx":421B84
+      Picture         =   "okt.frx":424BC6
       Style           =   1  'Graphical
       TabIndex        =   16
       Top             =   8760
@@ -150,7 +171,7 @@ Begin VB.Form Form1
       Height          =   1215
       Left            =   7320
       MaskColor       =   &H0000C000&
-      Picture         =   "okt.frx":424BC6
+      Picture         =   "okt.frx":427C08
       Style           =   1  'Graphical
       TabIndex        =   15
       Top             =   8760
@@ -216,7 +237,7 @@ Begin VB.Form Form1
       EndProperty
       Height          =   1215
       Left            =   3720
-      Picture         =   "okt.frx":427C08
+      Picture         =   "okt.frx":42AC4A
       Style           =   1  'Graphical
       TabIndex        =   12
       Top             =   8760
@@ -237,7 +258,7 @@ Begin VB.Form Form1
       EndProperty
       Height          =   1215
       Left            =   120
-      Picture         =   "okt.frx":42AC4A
+      Picture         =   "okt.frx":42DC8C
       Style           =   1  'Graphical
       TabIndex        =   11
       Top             =   7560
@@ -259,7 +280,7 @@ Begin VB.Form Form1
       Height          =   1215
       Left            =   6120
       OLEDropMode     =   1  'Manual
-      Picture         =   "okt.frx":42DC8C
+      Picture         =   "okt.frx":430CCE
       Style           =   1  'Graphical
       TabIndex        =   10
       Top             =   8760
@@ -288,7 +309,7 @@ Begin VB.Form Form1
       Height          =   1215
       Left            =   8520
       MaskColor       =   &H00FF00FF&
-      Picture         =   "okt.frx":430CCE
+      Picture         =   "okt.frx":433D10
       Style           =   1  'Graphical
       TabIndex        =   9
       Top             =   7560
@@ -309,7 +330,7 @@ Begin VB.Form Form1
       EndProperty
       Height          =   1215
       Left            =   7320
-      Picture         =   "okt.frx":433D10
+      Picture         =   "okt.frx":436D52
       Style           =   1  'Graphical
       TabIndex        =   8
       Top             =   7560
@@ -330,7 +351,7 @@ Begin VB.Form Form1
       EndProperty
       Height          =   1215
       Left            =   6120
-      Picture         =   "okt.frx":436D52
+      Picture         =   "okt.frx":439D94
       Style           =   1  'Graphical
       TabIndex        =   7
       Top             =   7560
@@ -351,7 +372,7 @@ Begin VB.Form Form1
       EndProperty
       Height          =   1215
       Left            =   4920
-      Picture         =   "okt.frx":439D94
+      Picture         =   "okt.frx":43CDD6
       Style           =   1  'Graphical
       TabIndex        =   6
       Top             =   7560
@@ -372,7 +393,7 @@ Begin VB.Form Form1
       EndProperty
       Height          =   1215
       Left            =   3720
-      Picture         =   "okt.frx":43CDD6
+      Picture         =   "okt.frx":43FE18
       Style           =   1  'Graphical
       TabIndex        =   5
       Top             =   7560
@@ -393,7 +414,7 @@ Begin VB.Form Form1
       EndProperty
       Height          =   1215
       Left            =   2520
-      Picture         =   "okt.frx":43FE18
+      Picture         =   "okt.frx":442E5A
       Style           =   1  'Graphical
       TabIndex        =   4
       Top             =   7560
@@ -414,7 +435,7 @@ Begin VB.Form Form1
       EndProperty
       Height          =   1215
       Left            =   1320
-      Picture         =   "okt.frx":442E5A
+      Picture         =   "okt.frx":445E9C
       Style           =   1  'Graphical
       TabIndex        =   3
       Top             =   7560
@@ -504,6 +525,7 @@ Attribute VB_Exposed = False
 Dim print_mode As Integer
 Dim draw_mode As Boolean
 
+
 'Dim vlist()
 
 Sub draw() 'отрисовка
@@ -524,25 +546,31 @@ Me.Picture1.Visible = True
 Me.Command15.Visible = True
 Dim matr(5, 2) As Double
 Dim batr
+Dim batr_dash
 
 matr(0, 0) = 5.001
 matr(0, 1) = 4.028
+
 matr(1, 0) = 0
 matr(1, 1) = 4.028
+
 matr(2, 0) = 1.732
 matr(2, 1) = 5.087
+
 matr(3, 0) = 6.732
 matr(3, 1) = 5.087
+
 matr(4, 0) = 3.366
 matr(4, 1) = 8.586
+
 matr(5, 0) = 3.366
 matr(5, 1) = 0.53
-batr = Array(0, 1, 1, 2, 2, 3, 3, 0, 1, 4, 2, 4, 0, 4, 3, 4, 1, 5, 2, 5, 0, 5, 3, 5)
-
+batr = Array(1, 2, 2, 3, 1, 4, 2, 4, 3, 4, 1, 5, 2, 5, 3, 5)
+batr_dash = Array(0, 1, 3, 0, 0, 5, 0, 4)
 Me.Picture1.Cls
 Me.Picture1.Scale (-20, -15)-(60, 45)
 'Me.Picture1.draw
-
+Me.Picture1.DrawStyle = 0
 
 For k = 0 To UBound(batr) Step 2
     mn = Int(batr(k))
@@ -551,6 +579,17 @@ For k = 0 To UBound(batr) Step 2
 '    Me.Picture1
     Me.Picture1.Line (matr(mn, 0) * 5, matr(mn, 1) * 5)-(matr(bn, 0) * 5, matr(bn, 1) * 5)
 Next
+
+Me.Picture1.DrawStyle = 2
+For l = 0 To UBound(batr_dash) Step 2
+    mn = Int(batr_dash(l))
+    bn = Int(batr_dash(l + 1))
+    ff = matr()
+    
+    Me.Picture1.Line (matr(mn, 0) * 5, matr(mn, 1) * 5)-(matr(bn, 0) * 5, matr(bn, 1) * 5)
+Next
+Me.Picture1.DrawStyle = 0
+
 
 vinos_x = matr(2, 0) * 5 + ((matr(1, 0) - matr(2, 0)) * 5) / 2
 vinos_y = matr(2, 1) * 5 + ((matr(1, 1) - matr(2, 1)) * 5) / 2
@@ -703,6 +742,39 @@ Me.Command17.BackColor = &HFF00&
 Me.Command17.Enabled = False
 Me.Command16.Enabled = True
 Me.Command16.BackColor = &HC0FFC0
+
+End Sub
+
+Sub photoshop()
+
+Set ps = CreateObject("Photoshop.Application")
+
+
+
+
+
+End Sub
+
+
+
+
+
+
+
+Private Sub Command18_Click()
+
+Dim appRef, inputFiles(), i, outputfiles, options, objWshShell
+
+
+'On Error GoTo nophotoshop
+Set appRef = CreateObject("Photoshop.Application")
+
+'Call photoshop
+
+
+
+
+
 
 End Sub
 
