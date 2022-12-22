@@ -18,6 +18,26 @@ Begin VB.Form Form1
    ScaleHeight     =   10050
    ScaleWidth      =   14910
    StartUpPosition =   3  'Windows Default
+   Begin VB.CommandButton Command19 
+      BackColor       =   &H00C000C0&
+      Caption         =   "RTF"
+      BeginProperty Font 
+         Name            =   "MV Boli"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   1215
+      Left            =   120
+      Picture         =   "okt.frx":41EB42
+      Style           =   1  'Graphical
+      TabIndex        =   24
+      Top             =   8760
+      Width           =   1215
+   End
    Begin VB.CommandButton Command18 
       Appearance      =   0  'Flat
       BackColor       =   &H00C000C0&
@@ -33,7 +53,7 @@ Begin VB.Form Form1
       EndProperty
       Height          =   1215
       Left            =   1320
-      Picture         =   "okt.frx":41EB42
+      Picture         =   "okt.frx":421B84
       Style           =   1  'Graphical
       TabIndex        =   23
       Top             =   8760
@@ -114,7 +134,7 @@ Begin VB.Form Form1
       EndProperty
       Height          =   1215
       Left            =   2520
-      Picture         =   "okt.frx":421B84
+      Picture         =   "okt.frx":424BC6
       Style           =   1  'Graphical
       TabIndex        =   18
       Top             =   8760
@@ -149,7 +169,7 @@ Begin VB.Form Form1
       EndProperty
       Height          =   1215
       Left            =   4920
-      Picture         =   "okt.frx":424BC6
+      Picture         =   "okt.frx":427C08
       Style           =   1  'Graphical
       TabIndex        =   16
       Top             =   8760
@@ -171,7 +191,7 @@ Begin VB.Form Form1
       Height          =   1215
       Left            =   7320
       MaskColor       =   &H0000C000&
-      Picture         =   "okt.frx":427C08
+      Picture         =   "okt.frx":42AC4A
       Style           =   1  'Graphical
       TabIndex        =   15
       Top             =   8760
@@ -237,7 +257,7 @@ Begin VB.Form Form1
       EndProperty
       Height          =   1215
       Left            =   3720
-      Picture         =   "okt.frx":42AC4A
+      Picture         =   "okt.frx":42DC8C
       Style           =   1  'Graphical
       TabIndex        =   12
       Top             =   8760
@@ -258,7 +278,7 @@ Begin VB.Form Form1
       EndProperty
       Height          =   1215
       Left            =   120
-      Picture         =   "okt.frx":42DC8C
+      Picture         =   "okt.frx":430CCE
       Style           =   1  'Graphical
       TabIndex        =   11
       Top             =   7560
@@ -280,7 +300,7 @@ Begin VB.Form Form1
       Height          =   1215
       Left            =   6120
       OLEDropMode     =   1  'Manual
-      Picture         =   "okt.frx":430CCE
+      Picture         =   "okt.frx":433D10
       Style           =   1  'Graphical
       TabIndex        =   10
       Top             =   8760
@@ -309,7 +329,7 @@ Begin VB.Form Form1
       Height          =   1215
       Left            =   8520
       MaskColor       =   &H00FF00FF&
-      Picture         =   "okt.frx":433D10
+      Picture         =   "okt.frx":436D52
       Style           =   1  'Graphical
       TabIndex        =   9
       Top             =   7560
@@ -330,7 +350,7 @@ Begin VB.Form Form1
       EndProperty
       Height          =   1215
       Left            =   7320
-      Picture         =   "okt.frx":436D52
+      Picture         =   "okt.frx":439D94
       Style           =   1  'Graphical
       TabIndex        =   8
       Top             =   7560
@@ -351,7 +371,7 @@ Begin VB.Form Form1
       EndProperty
       Height          =   1215
       Left            =   6120
-      Picture         =   "okt.frx":439D94
+      Picture         =   "okt.frx":43CDD6
       Style           =   1  'Graphical
       TabIndex        =   7
       Top             =   7560
@@ -372,7 +392,7 @@ Begin VB.Form Form1
       EndProperty
       Height          =   1215
       Left            =   4920
-      Picture         =   "okt.frx":43CDD6
+      Picture         =   "okt.frx":43FE18
       Style           =   1  'Graphical
       TabIndex        =   6
       Top             =   7560
@@ -393,7 +413,7 @@ Begin VB.Form Form1
       EndProperty
       Height          =   1215
       Left            =   3720
-      Picture         =   "okt.frx":43FE18
+      Picture         =   "okt.frx":442E5A
       Style           =   1  'Graphical
       TabIndex        =   5
       Top             =   7560
@@ -414,7 +434,7 @@ Begin VB.Form Form1
       EndProperty
       Height          =   1215
       Left            =   2520
-      Picture         =   "okt.frx":442E5A
+      Picture         =   "okt.frx":445E9C
       Style           =   1  'Graphical
       TabIndex        =   4
       Top             =   7560
@@ -435,7 +455,7 @@ Begin VB.Form Form1
       EndProperty
       Height          =   1215
       Left            =   1320
-      Picture         =   "okt.frx":445E9C
+      Picture         =   "okt.frx":448EDE
       Style           =   1  'Graphical
       TabIndex        =   3
       Top             =   7560
@@ -525,9 +545,6 @@ Attribute VB_Exposed = False
 Dim print_mode As Integer
 Dim draw_mode As Boolean
 
-
-'Dim vlist()
-
 Sub draw() 'отрисовка
 
 
@@ -615,7 +632,7 @@ On Error GoTo noword
 Set w = CreateObject("word.application")
  On Error GoTo 0
  w.Visible = True
- w.documents.Add
+ w.Documents.Add
  w.selection.typetext "объём октаэдра = " & (Me.Text1 ^ 3 * Sqr(2)) / 3
  w.Activate
  Set w = Nothing
@@ -686,12 +703,6 @@ Printer.Print "Объем октаэдера со стороной " & Format(CDbl(Me.Text1.Text), "0.00
 Printer.EndDoc
 
 
-
-
-
-
-
-
 End Sub
 
 Sub arhiv() 'архивация
@@ -745,40 +756,25 @@ Me.Command16.BackColor = &HC0FFC0
 
 End Sub
 
-Sub photoshop()
+Private Sub Command18_Click() 'Photoshop
 
-Set ps = CreateObject("Photoshop.Application")
+Set appRef = CreateObject("photoshop.application")
+Set docref = appRef.Documents.Add(1920, 1080, 72)
+docref.activelayer.kind = 2
 
+Set artlayerref = docref.ArtLayers.Add
+artlayerref.isbackgroundlayer = False
 
+Set textItemRef = artlayerref.TextItem
 
+a = (Me.Text1 ^ 3 * Sqr(2)) / 3
 
-
-End Sub
-
-
-
-
-
-
-
-Private Sub Command18_Click()
-
-Dim appRef, inputFiles(), i, outputfiles, options, objWshShell
-
-
-'On Error GoTo nophotoshop
-Set appRef = CreateObject("Photoshop.Application")
-
-'Call photoshop
-
-
-
-
-
+docref.activelayer.TextItem.Contents = "Объем октаэдера со стороной " & Format(CDbl(Me.Text1.Text), "0.000") & vbCrLf & "   равен " & Format(a, "0.000")
+docref.activelayer.TextItem.Size = 30
 
 End Sub
 
-Private Sub Command2_Click() 'excel
+Private Sub Command2_Click() 'Excel
 Dim e As Object
 
 On Error GoTo noexcel
@@ -786,7 +782,7 @@ Set e = CreateObject("excel.application")
  On Error GoTo 0
  e.Visible = True
  e.workbooks.Add
- e.ActiveSheet.Range("A1").Value = "объём октаэдра = " & (Me.Text1 ^ 3 * Sqr(2)) / 3
+ e.ActiveSheet.Range("A1").Value = "Объём октаэдра = " & (Me.Text1 ^ 3 * Sqr(2)) / 3
  Set e = Nothing
  Exit Sub
 noexcel:
@@ -849,7 +845,7 @@ part.SelectionManager.EnableContourSelection = False
 Set swmass = part.Extension.createmassproperty
 dvolume = swmass.Volume
 swapp.sendmsgtouser ("объём октаэдра = " & ((Me.Text1.Text ^ 3) * Sqr(2))) / 3
-Me.Label2.Caption = (((Me.Text1.Text ^ 3) * Sqr(2)) / 3)
+MsgBox (((Me.Text1.Text ^ 3) * Sqr(2)) / 3)
 End Sub
 
 Private Sub Command6_Click() 'open
@@ -904,8 +900,7 @@ oFileStream.Close
 
 End Sub
 
-
-Private Sub Command9_Click()
+Private Sub Command9_Click() 'COPY
 s = ((Me.Text1.Text ^ 3) * Sqr(2)) / 3
 a = "volume of octahedron so storonoy " & " " & Me.Text1.Text & " " & " mm is " & s
 
@@ -914,8 +909,7 @@ tet = Clipboard.GetText()
 MsgBox (tet)
 End Sub
 
-Private Sub Command10_Click()
-
+Private Sub Command10_Click() 'PrintingMode
 
 If print_mode <> 0 Then
     If print_mode = 1 Then
@@ -928,11 +922,6 @@ Else
     MsgBox "Выберите Printer Mode", vbCritical, "ERROR"
 End If
 
-
-
-
-
-    
 End Sub
 
 
